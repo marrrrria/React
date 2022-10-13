@@ -1,0 +1,64 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.mem-description {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.mem-description p {
+  color: white;
+  text-shadow: 2px 0 2px #000,
+      0 2px 2px #000,
+      -2px 0 2px #000,
+      0 -2px 2px #000;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
+
+.container {
+  position: relative;
+}
+
+.wrapper {
+  width: 600px;
+  margin: 60px auto;
+}
+
+input {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid grey;
+  margin-right: 20px;
+  width: 130px;
+  height: 30px;
+  padding-left: 20px;
+}
+
+
+button {
+  height: 30px;
+  border-radius: 5px;
+  border: 2px dotted rgba(11, 0, 75, 0.623);
+  background-color: rgba(157, 184, 219, 0.596);
+  color: white;
+  -webkit-text-stroke: .04em;
+  text-shadow: 1px 0 1px #000,
+      0 1px 1px #000,
+      -1px 0 1px #000,
+      0 -1px 1px #000;
+  width: 50px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(135, 174, 226);
+  border: 2px dotted rgb(11, 0, 75);
+  font-size: 14px;
+}
