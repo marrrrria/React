@@ -42,7 +42,7 @@ export default function MemBuilder() {
   return (
     <div className="wrapper">
       <div className="container">
-        <ControlPanel getPicture={getPicture}/>
+        <ControlPanel getPicture={getPicture} isChange={state.isChange}/>
         <Mem url={state.pictureUrl} changePicture={changePicture} isChange={state.isChange} permitChange={permitChange}/>
       </div>
     </div>
