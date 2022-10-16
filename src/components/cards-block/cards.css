@@ -57,6 +57,11 @@
 
 .card__date svg {
   cursor: pointer;
+  color:  rgb(113, 113, 113);
+}
+
+.card__date svg:hover {
+  color: rgb(106, 0, 12);
 }
 
 .card-additional-horizontal {
@@ -68,6 +73,7 @@
 
 .card-additional-horizontal svg {
   margin-left: 10px;
+  color: rgb(113, 113, 113);
 }
 
 .card__likes {
@@ -95,4 +101,9 @@
   /* height: 10px; */
   cursor: pointer;
 
+}
+
+.icon-heart:hover {
+  color: rgb(255, 0, 102);
+  border-top-color: rgb(255, 0, 102);
 }
