@@ -41,8 +41,8 @@ export default function CreateTest() {
           <option value="tea">Tea</option>
         </select>
         <label><input type="checkbox" name="isFriendly" checked={state.isFriendly} onChange={(e) => changeHandler(e)}/> IS Friendly ?</label>
-        <label><input name="gender" value="male" checked={state.gender === "male" ? true : false} type="radio" onChange={(e) => changeHandler(e)}/> Male</label>
-        <label><input name="gender" value="female" checked={state.gender === "female" ? true : false} type="radio" onChange={(e) => changeHandler(e)}/> Female</label>
+        <label><input name="gender" value="male" checked={state.gender === "male"} type="radio" onChange={(e) => changeHandler(e)}/> Male</label>
+        <label><input name="gender" value="female" checked={state.gender === "female"} type="radio" onChange={(e) => changeHandler(e)}/> Female</label>
         
         
         <button type="submit">Create</button>
