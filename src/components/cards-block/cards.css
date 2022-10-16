@@ -1,0 +1,98 @@
+.card-wrapper {
+  margin: 50px auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px 0;
+  border-radius: 10px;
+  /* border: 1px solid black; */
+  /* width: 170px; */
+  margin: 10px;
+  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.273);
+}
+
+.card-general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 20px; */
+}
+
+.card-general img {
+  width: 150px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.card__price {
+
+}
+
+.card-additional {
+  /* display: flex; */
+  /* margin-bottom: 20px; */
+
+}
+
+.card__description {
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+.card__date {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.card__date svg {
+  cursor: pointer;
+}
+
+.card-additional-horizontal {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.card-additional-horizontal svg {
+  margin-left: 10px;
+}
+
+.card__likes {
+
+}
+
+.card__watches {
+
+}
+
+.icon-heart {
+  border-radius: 50%;
+  border-top-color: black;
+  border-top-width: 1px;
+  border-top-style: solid;
+  /* border: 1px solid black; */
+  padding: 5px 10px 0;
+  overflow: hidden;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  /* border: ; */
+  /* padding: 5px 20px 40px; */
+  /* overflow: hidden; */
+  /* height: 10px; */
+  cursor: pointer;
+
+}

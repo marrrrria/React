@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+.searchbar {
+  display: flex;
+  width: 300px;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.absolute {
+  margin-right: -26px;
+  z-index: 1;
+  top:0;
+  left:0;
+}
+
+.searchbar input {
+  height: 35px;
+  border-radius: 30px;
+  padding-left: 30px;
+  outline: none;
+  border: 3px solid rgb(151, 135, 225);
+  color: rgb(36, 226, 175);
+  font-family: 'Paytone One', sans-serif;
+  /* padding-bottom: 4px; */
+  font-size: 20px;
+}

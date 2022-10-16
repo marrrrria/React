@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: center;
+}
+
+header ul {
+  display: flex;
+  width: 140px;
+  justify-content:space-between;
+  list-style: none;
+}

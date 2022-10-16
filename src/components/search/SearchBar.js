@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import './search.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 
 export default function SearchBar() {
 
@@ -25,8 +28,10 @@ export default function SearchBar() {
 
   return (
     <div>
-      <form onSubmit={(e) => submitHandler(e)}>
-        <input value={value} onChange={(e) => changeValue(e)} type="text"/><icon>search</icon>
+      <form onSubmit={(e) => submitHandler(e)} className="searchbar">
+        <div className="absolute"><FontAwesomeIcon icon={faMagnifyingGlass} /></div>
+        <input value={value} onChange={(e) => changeValue(e)} type="text"/>
+        
       </form>
     </div>
   )
