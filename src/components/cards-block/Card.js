@@ -3,10 +3,9 @@ import './cards.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faThumbsUp, faShareNodes } from "@fortawesome/free-solid-svg-icons"
 import { faHeart } from "@fortawesome/free-regular-svg-icons"
+import { Link } from 'react-router-dom'
 
-export default function Card() {
-
-  const data = [
+const data = [
     {
       id: 1,
       img: 'https://i.pinimg.com/564x/fd/5a/53/fd5a53339e851a066b39e07d377e59c5.jpg',
@@ -75,33 +74,48 @@ export default function Card() {
     },
   ]
 
+function Card({ history }) {
+
   function goToPage(url) {
     console.log(url)
+    history.push(`/product${url}`)
+
+  }
+
+  function likeHandler(e) {
+    e.preventDefault()
+  }
+
+  function shareHandler(e) {
+    e.preventDefault()
   }
 
   let result = data.map(item => {
     return (
-      <div key={`hi${item.id}`} onClick={() => goToPage(item.url)} className="card-container">
-      <div className="card-general">
-        <img src={item.img}/>
-        <h3>{item.price ? `${item.price}$` : 'SOLD OUT'}</h3>
-      </div><br/>
-      <div className="card-additional">
-        <p className="card__title">{item.title}</p>
-        <p className="card__description">{item.description}</p><br/>
-        <p className="card__date">{item.date}<FontAwesomeIcon icon={faShareNodes}/></p>
-      </div><br/>
-      <div className="card-additional-horizontal">
-        <p className="card__likes">{item.likesCount}<FontAwesomeIcon icon={faThumbsUp}/></p>
-        <p className="card__watches">{item.watchesCount}<FontAwesomeIcon icon={faEye}/></p>
-      </div>
-      <div className="icon-heart">
-        <FontAwesomeIcon icon={faHeart}/>
-        {/* <FontAwesomeIcon icon={faHeart}/> */}
-      </div>
+      <Link key={`hi${item.id}`} to={`/product${item.url}`}>
+        <div className="card-container">
+          <div className="card-general">
+            <img src={item.img} alt="product"/>
+            <h3>{item.price ? `${item.price}$` : 'SOLD OUT'}</h3>
+          </div><br/>
+          <div className="card-additional">
+            <p className="card__title">{item.title}</p>
+            <p className="card__description">{item.description}</p><br/>
+            <p className="card__date" onClick={(e) => shareHandler(e)}>{item.date}<FontAwesomeIcon icon={faShareNodes}/></p>
+          </div><br/>
+          <div className="card-additional-horizontal">
+            <p className="card__likes">{item.likesCount}<FontAwesomeIcon icon={faThumbsUp}/></p>
+            <p className="card__watches">{item.watchesCount}<FontAwesomeIcon icon={faEye}/></p>
+          </div> 
+          <div className="icon-heart" onClick={(e) => likeHandler(e)}>
+            <FontAwesomeIcon icon={faHeart}/>
+            {/* <FontAwesomeIcon icon={faHeart}/> */}
+          </div>
+        </div>
+      </Link>
       
 
-    </div>
+    
     )
   })
 
@@ -113,3 +127,7 @@ export default function Card() {
     
   )
 }
+
+
+
+export { Card, data }

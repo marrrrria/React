@@ -8,7 +8,6 @@ export default function SearchBar() {
   const [value, setValue] = React.useState('')
 
   function changeValue(e) {
-    console.log(value)
     setValue(e.target.value)
   }
 
@@ -19,7 +18,7 @@ export default function SearchBar() {
   }
 
   useEffect(() => {
-    setValue(localStorage.getItem('searchValue'))
+    // setValue(localStorage.getItem('searchValue'))
     return () => {
       // localStorage.setItem('searchValue', value)
     }
