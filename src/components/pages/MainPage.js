@@ -5,9 +5,9 @@ import { Navigate, redirect } from "react-router-dom";
 
 export default function MainPage() {
   console.log(redirect('/about'))
-  if(true) {
-    return <Navigate to="/about"/>
-  }
+  // if(true) {
+  //   return <Navigate to="/about"/>
+  // }
   return (
     <div>
       <SearchBar/>
