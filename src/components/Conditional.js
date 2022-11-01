@@ -19,13 +19,11 @@ export default class Conditional extends Component {
     }))
   }
 
-
-  
   render() {
     return (
       <div>
         {/* {this.state.isLoading || <button onClick={() => this.changeLogIn()}>{this.state.isLogIn ? "LOG OUT" : "LOG IN"}</button>} */}
-        <button onClick={() => this.changeLogIn()}>{this.state.isLogIn ? "LOG OUT" : "LOG IN"}</button>
+        <button onClick={() => this.changeLogIn()}>{this.state.isLogIn ? "LOG OUT" : "LOG IN"}</button> 
         {this.state.isLogIn && <CreateTest/>}
         
         {/* {this.state.isLogIn ? <button onClick={() => this.changeLogIn()}>LOG OUT</button> : <button onClick={() => this.changeLogIn()}>LOG IN</button>} */}
