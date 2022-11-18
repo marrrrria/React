@@ -24,6 +24,8 @@ export default function SearchBar() {
     }
   },[])
   
+  //Add API to search
+  //TASK 3
 
   return (
     <div>
