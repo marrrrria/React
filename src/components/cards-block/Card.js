@@ -95,7 +95,7 @@ function Card({ history }) {
       <Link key={`hi${item.id}`} to={`/product${item.url}`}>
         <div className="card-container">
           <div className="card-general">
-            <img src={item.img} alt="product"/>
+            <img className="img" src={item.img} alt="product"/>
             <h3>{item.price ? `${item.price}$` : 'SOLD OUT'}</h3>
           </div><br/>
           <div className="card-additional">

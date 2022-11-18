@@ -1,0 +1,22 @@
+.form-profile {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-profile form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-profile input {
+  margin-bottom: 10px;
+}
+
+.form-profile button {
+  height: 40px;
+  width: 140px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+}

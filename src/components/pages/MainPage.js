@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "../search/SearchBar";
 import { Card } from "../cards-block/Card";
-import { Navigate, redirect } from "react-router-dom";
+import { Navigate, redirect, useSearchParams } from "react-router-dom";
 import PersonalData from "../PersonalData"
+import './main.css'
 
 export default function MainPage() {
-  console.log(redirect('/about'))
+  // console.log(redirect('/about'))
   // if(true) {
   //   return <Navigate to="/about"/>
   // }
@@ -38,14 +39,14 @@ export default function MainPage() {
         </div>
     )
   })
- 
+
   return (
     <div>
       <SearchBar/>
       <Card/>
       <PersonalData showPicture={showPicture}/>
-      {personalCard}
-
+      <div className="personal-data-cards">{personalCard}</div>
+      
 
       {/* <img src={pictureUrl} alt="picture from file input"/> */}
     </div>
