@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import './search.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+import API from '../API'
 
 export default function SearchBar() {
 
+  const api = new API()
   const [value, setValue] = React.useState('')
 
   function changeValue(e) {
@@ -13,16 +15,15 @@ export default function SearchBar() {
 
   function submitHandler(e) {
     e.preventDefault()
-    // search(value)
-    setValue('')
+
+    // setValue('')
+    
+
   }
 
-  useEffect(() => {
-    // setValue(localStorage.getItem('searchValue'))
-    return () => {
-      // localStorage.setItem('searchValue', value)
-    }
-  },[])
+  function search(value) {
+    // api.searchByCharacters(value)
+  }
   
   //Add API to search
   //TASK 3
@@ -32,7 +33,6 @@ export default function SearchBar() {
       <form onSubmit={(e) => submitHandler(e)} className="searchbar">
         <div className="absolute"><FontAwesomeIcon icon={faMagnifyingGlass} /></div>
         <input value={value} onChange={(e) => changeValue(e)} type="text"/>
-        
       </form>
     </div>
   )

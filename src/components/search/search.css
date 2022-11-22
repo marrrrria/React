@@ -13,6 +13,7 @@
   z-index: 1;
   top:0;
   left:0;
+  color: white;
 }
 
 .searchbar input {
@@ -25,4 +26,5 @@
   font-family: 'Paytone One', sans-serif;
   /* padding-bottom: 4px; */
   font-size: 20px;
+  background-color: rgba(34, 34, 34, 0.829);
 }

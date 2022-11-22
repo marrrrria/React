@@ -1,0 +1,120 @@
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 85vw;
+  margin:0 auto;
+  // border: 1px solid white;
+  border-radius: 20px;
+  // padding: 20px 0;
+}
+
+.card {
+  margin: 10px;
+  color: white;
+
+  &__character-photo {
+    border-radius: 10px;
+    border: 1px solid rgba(7, 7, 10, 0.945);
+  }
+
+  &__episode {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    width: 180px;
+    // 
+    
+    &-icon {
+    
+      // opacity: 70deg;
+    }
+  }
+
+  &__episode>* {
+    margin: 0 auto;
+  }
+
+  &__episode>span {
+    margin: 0 auto;
+    width: 100px;
+  }
+
+  &__episodes-container {
+    // display: flex;
+  }
+}
+
+.card>.card__character-photo {
+  opacity: 50%;
+  transition: all 0.5s ease-out;
+}
+
+.card>.card__character-photo:hover {
+  cursor: pointer;
+  opacity: 100%;
+  transition: all 0.5s ease-out;
+}
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 1, 0.644);
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.modal-body {
+  padding: 2rem;
+  /* width: 600px; */
+  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  height: 70%;
+  width: 60%;
+  position: relative;
+  // overflow-y: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.cancel-button {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  font-size: 40px;
+  background-color: rgba(255, 255, 255, 0.459);
+}
+
+.cancel-button:hover {
+  cursor: pointer;
+  color: rgb(255, 0, 0)
+}
+
+.slick-prev:before,
+.slick-next:before {
+  // color: black;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+
+}
+
+.additional-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.additional-info {
+  margin-left: 30px;
+  font-size: 20px;
+
+}
