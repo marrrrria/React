@@ -11,7 +11,7 @@ export default function ShowCarousel({episodes}) {
     dots: true,
       // infinite: true,
       speed: 500,
-      slidesToShow: episodes.length > 3 ? 4 : 1,
+      slidesToShow: episodes.length > 3 ? 4 : episodes.length,
       slidesToScroll: 4
   }
 

@@ -7,6 +7,7 @@ export default class API {
     // console.log(url, this._baseUrl)
     try {
       const response = await fetch(`${this._baseUrl}` + url);
+      // console.log(response)
       if(!response.ok) {
         throw new Error(`Could not fetch, received ${response.status}`)
       } else {
@@ -15,7 +16,14 @@ export default class API {
       }
     }
     catch(err) {
-      toast.error('Error')
+      toast.error(`There isn't any results`, {
+        style: {
+          // background: 'rgb(136, 136, 136)',
+          color: '#713200',
+          padding: '16px',
+          border: '1px solid #713200',
+        }
+      })
       // console.log('ERRORRRRRRRRRRRRRRR' + err)
     }
   }
@@ -46,7 +54,8 @@ export default class API {
   }
 
   async searchByCharacters(value) {
-    return await this.getData('/character/?name=' + value)
+    const characters = await this.getData('/character/?name=' + value)
+    return characters.results.map(this._transformCharacter) 
   }
 
   async searchByLocation(value) {

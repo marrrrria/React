@@ -8,17 +8,22 @@ export default function MainPage() {
 
   const api = new API()
   const [cardsInfo, setCardsInfo] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    api.getAllCharacters().then(data => setCardsInfo(data))
+    api.getAllCharacters().then(data => {setCardsInfo(data); setIsLoading(false)})
     // api.getAllLocations().then(data => console.log(data))
     // api.getAllEpisodes().then(data => console.log(data))
   },[])
 
+  function searchValue(value) {
+    api.searchByCharacters(value).then(data => setCardsInfo(data))
+  }
+
   return (
     <div>
-      <SearchBar/>
-      {cardsInfo.length ? <CardsContainer cardsInfo={cardsInfo}/> : null}
+      <SearchBar searchValue={searchValue}/>
+      {cardsInfo.length && !isLoading ? <CardsContainer cardsInfo={cardsInfo}/> : <p>Loading...</p>}
       
       {/* <Filters/> */}
       {/* <Content/> */}

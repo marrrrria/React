@@ -6,12 +6,17 @@ import './app.scss'
 
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import NotFound from "./components/pages/404";
+import { Toaster } from "react-hot-toast";
 
 
 function App() {
 
   return (
     <div className="background-app">
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <Router>
         <Header/>
         <Routes>

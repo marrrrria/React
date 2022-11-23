@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import API from '../API'
 
-export default function SearchBar() {
+export default function SearchBar({searchValue}) {
 
   const api = new API()
   const [value, setValue] = React.useState('')
@@ -15,7 +15,7 @@ export default function SearchBar() {
 
   function submitHandler(e) {
     e.preventDefault()
-
+    searchValue(value)
     // setValue('')
     
 

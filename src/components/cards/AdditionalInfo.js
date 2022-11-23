@@ -5,15 +5,12 @@ import ShowCarousel from "./Carousel";
 
 export default function AdditionalInfo({info}) {
   const api = new API()
-console.log(info)
   const [episodesInfo, setEpisodesInfo] = useState([])
 
   useEffect(() => {
     // setEpisodesInfo([])
     let eInfo = []
-    console.log(info.episode)
     info.episode.forEach(item => {
-      console.log(item)
     let idEpisode = item.substr(item.lastIndexOf('/')+1); 
     api.getEpisode(idEpisode).then(data => {
       eInfo.push({id: data.id, name: data.name})
@@ -34,9 +31,6 @@ console.log(info)
     return <p key={info.id} className="card__episode"><img className="carc__episode-icon" src={movieIcon} alt="movie" width="180px" height="180px"/> <span>Episode {info.id} {info.name}</span></p>
   })
 
-  console.log(episodesInfo, 'EPISODES')
-
-  console.log(info)
   return (
     <>
     <div className="additional-card-info">
@@ -53,8 +47,11 @@ console.log(info)
       
     </div>
     <div className="card__episodes-container">
+      {episodes.length ? 
         <ShowCarousel episodes={episodes}/>
+        : null}
         {/* {episodes} */}
+      
     </div>
     </>
     
