@@ -1,15 +1,22 @@
 import toast from 'react-hot-toast';
 
 export default class API {
+
   _baseUrl = "https://rickandmortyapi.com/api"
 
   async getData(url) {
     // console.log(url, this._baseUrl)
     try {
       const response = await fetch(`${this._baseUrl}` + url);
-      // console.log(response)
+      // console.log( response.json())
       if(!response.ok) {
-        throw new Error(`Could not fetch, received ${response.status}`)
+        if(response.status === 500) {
+          toast.error('Server Error')
+        }
+        else {
+          throw new Error(`Could not fetch, received ${response.status}`)
+        }
+        
       } else {
         const data = await response.json();
         return data
@@ -55,7 +62,8 @@ export default class API {
 
   async searchByCharacters(value) {
     const characters = await this.getData('/character/?name=' + value)
-    return characters.results.map(this._transformCharacter) 
+    console.log(characters)
+    return characters ? characters.results.map(this._transformCharacter) : []
   }
 
   async searchByLocation(value) {
