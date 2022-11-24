@@ -17,6 +17,11 @@ export default class Modal extends React.Component {
     this._api.getCharacter(id).then(data => this.setState({additionalInfo: data}))
   }
 
+  close(e) {
+    if(e.target.className === 'modal' || e.target.className === 'cancel-button')
+    {this.setState({isOpen: false})}
+  }
+
   render() {
     const card = <>
             <img className="card__character-photo" src={this.state.info.image} alt="character"/>
@@ -29,9 +34,9 @@ export default class Modal extends React.Component {
                                                 this.setState({isOpen: true})
                                                 this.getAdditional(this.state.info.id)}}>{card}</div>
         { this.state.isOpen && (
-            <div className="modal">
+            <div className="modal" onClick={(e) => this.close(e)}>
               <div className="modal-body">
-                <button className="cancel-button" onClick={() => this.setState({isOpen: false})}>&times;</button>
+                <button className="cancel-button" onClick={(e) => this.close(e)}>&times;</button>
                 {/* {card} */}
                 {this.state.additionalInfo.name ? <AdditionalInfo info={this.state.additionalInfo}/> : null}
               </div>

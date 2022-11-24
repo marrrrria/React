@@ -19,8 +19,6 @@ export default function AdditionalInfo({info}) {
   }
     })
   })
-  
-  
   }, [info])
 
   function sortEpisode(a,b) {
